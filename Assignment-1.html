@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> JS Assignment-1</title>
+        <script>
+            function replacement() {
+            var message = document.getElementById("message").value;
+            var wordR = document.getElementById("wordReplace").value;
+            var wordRW = document.getElementById("wordReplaceWith").value;
+
+            var newMessage = message.replaceAll(wordR, wordRW);
+            document.getElementById("output").innerHTML = newMessage;
+            }
+        </script>
+    </head>
+    <body>
+        <fieldset>
+            <legend>Find and Replace</legend>
+            <table>
+                <tr>
+                    <td><label>Enter the Text : </label></td>
+                    <td><input id="message" type="text"></td>
+                </tr>
+                <tr>
+                    <td><label>Enter word to replace : </label></td>
+                    <td><input id="wordReplace" type="text"></td>
+                </tr>
+                <tr>
+                    <td><label>Enter word to replace with : </label></td>
+                    <td><input type="text" id="wordReplaceWith"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="Submit" onclick="replacement()"></td>
+                </tr>
+                <tr>
+                    <td>OUTPUT :</td>
+                    <td><output type="text" id="output"></output></td>
+                </tr>
+            </table>
+        </fieldset>
+    </body>
+</html> 

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> JS Assignment-2</title>
+        <script>
+            function charges() {
+            var calls = parseInt(document.getElementById("ncalls").value);
+            var sms = parseInt(document.getElementById("nsms").value);
+
+            var callcharge=0.0; 
+            if (calls <= 50) callcharge = calls*.50;
+            else if (calls <= 150 && calls > 50) callcharge = 25 + .70*(calls-50);
+            else if (calls <= 300 && calls > 150) callcharge = 95 + .85*(calls-150);
+            else callcharge = 132.5+ .95*(calls-300);
+
+            var smscharge=0.0; 
+            if (sms <= 50) smscharge = 0;
+            else if (sms <= 200 && sms > 50) smscharge = 0 + .25*(sms-50);
+            else if (sms <= 400 && sms > 200) smscharge = 37.5 + .40*(sms-200);
+            else smscharge = 57.5+ .45*(sms-400);
+
+
+            TotalCharge = callcharge+smscharge;
+            alert("Output\n Charges for call:"+callcharge+"\nCharges for SMS:"+smscharge+"\nTotal Charges:"+TotalCharge);
+
+            }
+        </script>
+    </head>
+    <body>
+        <fieldset>
+            <legend>BILL AMOUNT</legend>
+            <table>
+                <tr>
+                    <td><label>Enter number of calls : </label></td>
+                    <td><input id="ncalls" type="number"></td>
+                </tr>
+                <tr>
+                    <td><label>Enter number of SMS : </label></td>
+                    <td><input  id="nsms" type="number"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="Submit" onclick="charges()"></td>
+                </tr>
+            </table>
+        </fieldset>
+    </body>
+</html> 
